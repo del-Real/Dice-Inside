@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1022372531053361622}
   - component: {fileID: 4152294612209399411}
   - component: {fileID: 2196383031136256697}
-  - component: {fileID: -7566842598906860490}
   - component: {fileID: 2007666509991225501}
   - component: {fileID: 1175740659598844289}
+  - component: {fileID: -7566842598906860490}
   m_Layer: 0
   m_Name: BasicDice
   m_TagString: Untagged
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-7566842598906860490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395158753550082924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efaa75a689ec3714daf2188457ebb08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rollSpeed: 3
 --- !u!54 &2007666509991225501
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,3 +116,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4426086975326297801, guid: 63509cdbabdd80041b469069c8269985, type: 3}
+--- !u!114 &-7566842598906860490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395158753550082924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efaa75a689ec3714daf2188457ebb08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollSpeed: 1
