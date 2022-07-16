@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    [SerializeField] List<GameObject> dices;
+    [SerializeField] GameObject dice;
     [SerializeField] bool isGameActive;
     [SerializeField] int spawnRate;
 
-    private Vector3 spawnPosition = new Vector3(0, 6.2f, 45f);
+    private Vector3 spawnPosition = new Vector3(0, 10f, 75f);
     private float[] spawnRotation = { 90f, 180f, 270f };
 
     void Start() {
         isGameActive = true;
+        SpawnDice();
         StartCoroutine(SpawnDice());
     }
 
@@ -20,9 +21,8 @@ public class GameManager : MonoBehaviour {
     IEnumerator SpawnDice() {
         while (isGameActive) {
             yield return new WaitForSeconds(spawnRate);
-            int diceIndex = Random.Range(0, dices.Count);
             int rotationIndex = Random.Range(0, spawnRotation.Length);
-            Instantiate(dices[diceIndex], spawnPosition, Quaternion.Euler(spawnRotation[rotationIndex], 0f, 0f));
+            Instantiate(dice, spawnPosition, Quaternion.Euler(spawnRotation[rotationIndex], 0f, 0f));
         }
 
     }
