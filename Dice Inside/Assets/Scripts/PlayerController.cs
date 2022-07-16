@@ -6,12 +6,12 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float turnSpeed;
+    //[SerializeField] private float turnSpeed;
     private Vector3 input;
 
     private void Update() {
         GatherInput();
-        //Look();
+        // Look();
     }
 
     private void FixedUpdate() {
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Move() {
 
-        rb.MovePosition(transform.position + input.normalized * moveSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + input.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 }
 
