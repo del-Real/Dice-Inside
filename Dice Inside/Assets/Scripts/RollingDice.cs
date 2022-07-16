@@ -5,15 +5,19 @@ using UnityEngine;
 public class RollingDice : MonoBehaviour {
 
     [SerializeField] float rollSpeed;
+
     private bool isRolling;
     private MeshCollider meshCollider;
+    private GameManager gameManager;
 
     void Start() {
         meshCollider = GetComponent<MeshCollider>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     void Update() {
         if (isRolling) return;
+        if (transform.position.z < -70) Destroy(gameObject);
 
         var anchor = transform.position + new Vector3(0f, -5f, -5f);
         var axis = Vector3.Cross(Vector3.up, -Vector3.forward);
@@ -23,6 +27,7 @@ public class RollingDice : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             Destroy(meshCollider);
+            gameManager.UpdateScore(100);
             Debug.Log("Collider Destroyed!!!");
         }
 
@@ -31,6 +36,8 @@ public class RollingDice : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Player")) {
             Debug.Log("Game Over!!!");
+            Destroy(collision.gameObject);
+            gameManager.GameOver();
         }
     }
 
