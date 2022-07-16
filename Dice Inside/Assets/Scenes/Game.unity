@@ -689,6 +689,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7566842598906860490, guid: d54ebe7672bc85d44956a43377465b28, type: 3}
+      propertyPath: rollSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 395158753550082924, guid: d54ebe7672bc85d44956a43377465b28, type: 3}
       propertyPath: m_Name
       value: BasicDice

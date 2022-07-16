@@ -15,7 +15,7 @@ public class RollingDice : MonoBehaviour {
     void Update() {
         if (isRolling) return;
 
-        var anchor = transform.position + new Vector3(0f, -5f, -5f);
+        var anchor = transform.position + new Vector3(0f, -10f, -10f);
         var axis = Vector3.Cross(Vector3.up, -Vector3.forward);
         StartCoroutine(Roll(anchor, axis));
     }
