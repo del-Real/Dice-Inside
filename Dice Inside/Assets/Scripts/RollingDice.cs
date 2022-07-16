@@ -6,9 +6,10 @@ public class RollingDice : MonoBehaviour {
 
     [SerializeField] float rollSpeed;
     private bool isRolling;
+    private MeshCollider meshCollider;
 
     void Start() {
-
+        meshCollider = GetComponent<MeshCollider>();
     }
 
     void Update() {
@@ -16,33 +17,32 @@ public class RollingDice : MonoBehaviour {
 
         var anchor = transform.position + new Vector3(0f, -5f, -5f);
         var axis = Vector3.Cross(Vector3.up, -Vector3.forward);
-        Roll(anchor, axis);
+        StartCoroutine(Roll(anchor, axis));
     }
 
-    void OnCollisionEnter(Collision collision) {
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            Destroy(meshCollider);
+            Debug.Log("Collider Destroyed!!!");
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Player")) {
             Debug.Log("Game Over!!!");
         }
     }
 
-    // IEnumerator Roll(Vector3 anchor, Vector3 axis) {
-    //     isRolling = true;
-
-    //     for (int i = 0; i < (90 / rollSpeed); i++) {
-    //         transform.RotateAround(anchor, axis, rollSpeed);
-    //         yield return new WaitForSeconds(0.01f);
-    //     }
-
-    //     isRolling = false;
-    // }
-
-    void Roll(Vector3 anchor, Vector3 axis) {
+    IEnumerator Roll(Vector3 anchor, Vector3 axis) {
         isRolling = true;
 
-        for (int i = 0; i < (90 / rollSpeed * Time.deltaTime); i++) {
+        for (int i = 0; i < (90 / rollSpeed); i++) {
             transform.RotateAround(anchor, axis, rollSpeed);
+            yield return new WaitForSeconds(0.01f);
         }
 
         isRolling = false;
     }
+
 }
