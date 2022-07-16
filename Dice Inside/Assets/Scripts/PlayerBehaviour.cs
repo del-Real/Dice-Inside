@@ -34,7 +34,7 @@ public class PlayerBehaviour : MonoBehaviour {
         }
         */
 
-        transform.Translate(movement.normalized * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(movement.normalized * moveSpeed * Time.deltaTime);
 
     }
 
