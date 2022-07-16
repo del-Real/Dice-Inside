@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
         GatherInput();
-        Look();
+        //Look();
     }
 
     private void FixedUpdate() {
@@ -22,18 +22,19 @@ public class PlayerController : MonoBehaviour {
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
-
+    /*
     private void Look() {
         if (input == Vector3.zero) return;
 
         var rot = Quaternion.LookRotation(input.ToIso(), Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, turnSpeed * Time.deltaTime);
     }
+    */
 
 
     private void Move() {
 
-        rb.MovePosition(transform.position + transform.forward * input.normalized.magnitude * moveSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + input.normalized * moveSpeed * Time.deltaTime);
     }
 }
 
