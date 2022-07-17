@@ -13,18 +13,27 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Text scoreText;
 
     private RollingDice rollingDice;
-    private Vector3 spawnPosition = new Vector3(0, 11.5f, 75f);
+    private Vector3 spawnPosition;
     private float[] spawnRotation = { 90f, 180f, 270f };
     private int score;
+    private Quaternion[] diceFaces = {
+        Quaternion.Euler(0,0,0),
+        Quaternion.Euler(90,0,0),
+        Quaternion.Euler(180,90,90),
+        Quaternion.Euler(180,90,-90),
+        Quaternion.Euler(-90,0,0),
+        Quaternion.Euler(-180,0,0),
+    };
 
     void Start() {
-        StartGame();
         rollingDice = dice.GetComponent<RollingDice>();
+        StartGame();
     }
 
     public void StartGame() {
         isGameActive = true;
         UpdateScore(0);
+
         StartCoroutine(SpawnDice());
     }
 
@@ -42,13 +51,16 @@ public class GameManager : MonoBehaviour {
         scoreText.text = "Score\n" + score;
     }
 
-
     IEnumerator SpawnDice() {
+        isGameActive = true;
         while (isGameActive) {
             yield return new WaitForSeconds(spawnRate);
-            int rotationIndex = Random.Range(0, spawnRotation.Length);
+            spawnPosition = new Vector3(0f, 11.5f, Random.Range(70f, 75f));
+            int randomFace = Random.Range(0, 5);
+            Debug.Log(randomFace + 1);
+            Quaternion diceFace = diceFaces[randomFace];
             rollingDice.IncreaseRandomSpeed();
-            Instantiate(dice, spawnPosition, Quaternion.Euler(spawnRotation[rotationIndex], 0f, spawnRotation[rotationIndex]));
+            Instantiate(dice, spawnPosition, diceFace);
         }
 
     }

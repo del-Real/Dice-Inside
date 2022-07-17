@@ -3,7 +3,10 @@ guid: 7efe9ca896929a5408ff55fe7dd48f0b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dice: {instanceID: 0}
+  - gameOverMenu: {instanceID: 0}
+  - scoreText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

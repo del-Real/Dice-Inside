@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RollingDice : MonoBehaviour {
 
-    [SerializeField] float rollSpeed;
-
+    private float rollSpeed = 0.5f;
     private bool isRolling;
     private MeshCollider meshCollider;
     private GameManager gameManager;
@@ -25,7 +24,7 @@ public class RollingDice : MonoBehaviour {
     }
 
     public void IncreaseRandomSpeed() {
-        rollSpeed += Random.Range(0.1f, 0.25f);
+        rollSpeed += Random.Range(0.01f, 0.03f);
     }
 
     private void OnTriggerEnter(Collider other) {
