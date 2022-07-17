@@ -24,6 +24,10 @@ public class RollingDice : MonoBehaviour {
         StartCoroutine(Roll(anchor, axis));
     }
 
+    public void IncreaseRandomSpeed() {
+        rollSpeed += Random.Range(0.1f, 0.25f);
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
             Destroy(meshCollider);

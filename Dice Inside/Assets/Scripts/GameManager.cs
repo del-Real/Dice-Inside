@@ -12,12 +12,14 @@ public class GameManager : MonoBehaviour {
     [SerializeField] int spawnRate;
     [SerializeField] Text scoreText;
 
+    private RollingDice rollingDice;
     private Vector3 spawnPosition = new Vector3(0, 11.5f, 75f);
     private float[] spawnRotation = { 90f, 180f, 270f };
     private int score;
 
     void Start() {
         StartGame();
+        rollingDice = dice.GetComponent<RollingDice>();
     }
 
     public void StartGame() {
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour {
         while (isGameActive) {
             yield return new WaitForSeconds(spawnRate);
             int rotationIndex = Random.Range(0, spawnRotation.Length);
+            rollingDice.IncreaseRandomSpeed();
             Instantiate(dice, spawnPosition, Quaternion.Euler(spawnRotation[rotationIndex], 0f, spawnRotation[rotationIndex]));
         }
 
