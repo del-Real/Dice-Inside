@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
         while (isGameActive) {
             yield return new WaitForSeconds(spawnRate);
             int rotationIndex = Random.Range(0, spawnRotation.Length);
-            Instantiate(dice, spawnPosition, Quaternion.Euler(spawnRotation[rotationIndex], 0f, 0f));
+            Instantiate(dice, spawnPosition, Quaternion.Euler(spawnRotation[rotationIndex], 0f, spawnRotation[rotationIndex]));
         }
 
     }
