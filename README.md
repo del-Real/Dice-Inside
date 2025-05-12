@@ -1,18 +1,16 @@
 # Dice Inside
 
-A tiny game about avoiding dice entering through their corresponding holes, developed for the **GMTK Game Jam 2022**.
+A tiny game about avoiding dice entering through their corresponding holes.
 
-Use arrow keys to move
+- Developed for the **GMTK Game Jam 2022**.
+- Use arrow keys to move
+  
+Play the game: [itch.io game page](https://curiositypath.itch.io/dice-inside)
+<br><br>
 
-![](./resources/screenshots/Additional camera_1.PNG)
+![Screenshot 1](https://raw.githubusercontent.com/del-Real/Dice-Inside/main/resources/screenshots/Additional%20camera_1.PNG)
 
-
-![](/resources/screenshots/Additional camera_2.png)
-
-
-## Play the Game
-
-[itch.io game page](https://curiositypath.itch.io/dice-inside)
+![Screenshot 2](https://raw.githubusercontent.com/del-Real/Dice-Inside/main/resources/screenshots/Additional%20camera_2.PNG)
 
 
 ## Credits
@@ -22,4 +20,4 @@ Use arrow keys to move
 - **Paul Andrei Taranu** ([@PaulAndreiTaranu](https://github.com/PaulAndreiTaranu))
 
 ### Music
-- Origami Repetika / *Attribution 4.0 International (CC BY 4.0)*
+- [Origami Repetika](https://freemusicarchive.org/music/Origami_Repetika/) / *Attribution 4.0 International (CC BY 4.0)*
