@@ -1,4 +1,10 @@
-# Dice Inside
+<p align="center">
+  <img src="https://raw.githubusercontent.com/del-Real/Dice-Inside/main/resources/graphic%20resources/DiceInside_logo_white.png" width="30%" alt="Dice Inside Logo">
+</p>
+
+
+#
+
 
 A tiny game about avoiding dice entering through their corresponding holes.
 
