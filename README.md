@@ -5,7 +5,9 @@ A tiny game about avoiding dice entering through their corresponding holes, deve
 Use arrow keys to move
 
 ![](./resources/screenshots/Additional camera_1.PNG)
-![](./resources/screenshots/Additional camera_2.PNG)
+
+
+![](/resources/screenshots/Additional camera_2.png)
 
 
 ## Play the Game
